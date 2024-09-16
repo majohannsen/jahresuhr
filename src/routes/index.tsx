@@ -2,20 +2,27 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
+  const time = new Date();
+  const seconds = (time.getTime() % (1000 * 60)) / 1000;
   return (
-    <>
-      <h1 class="text-3xl font-bold underline">Hi 👋</h1>
-      <div>
-        Can't wait to see what you build with qwik!
-        <br />
-        Happy coding.
+    <div class="max-w-2xl mx-auto">
+      <h1 class="text-3xl text-center font-bold mb-8">Jahresuhr</h1>
+      <div class="flex justify-center w-full">
+        <div style={{ transform: `rotate(${seconds * 6}deg)` }}>
+          <div
+            class="h-96 w-96 animate-spin border-4 rounded-full flex justify-center"
+            style={{ animationDuration: "60s" }}
+          >
+            <div class="bg-black w-2 h-48"></div>
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "Jahresuhr",
   meta: [
     {
       name: "description",
