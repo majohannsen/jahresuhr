@@ -16,8 +16,9 @@ export default component$(() => {
   const months = time.getMonth() + days / daysInMonth(time);
 
   return (
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-3xl text-center font-bold mb-8">Jahresuhr</h1>
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl font-bold ">Jahresuhr</h1>
+      <p class="mb-8">Zeitzone: UTC +0</p>
       <div class="mx-auto relative h-96 w-96 sm:h-[500px] sm:w-[500px] md:h-[600px] md:w-[600px] lg:h-[800px] lg:w-[800px]">
         <Clock
           value={months}
